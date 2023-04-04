@@ -1,0 +1,241 @@
+\begin{comment}
+\begin{center}
+2022. február 24.
+
+Gyakorlatvezető: Dr. Ács Bernadett
+
+Témakör: Leképezések
+\end{center}
+\end{comment}
+
+\subsection{}
+Hasonló-e a két mátrix?
+
+$$
+A=\left[\begin{array}{ll}
+2 & 1 \\
+0 & 2
+\end{array}\right] \quad B=\left[\begin{array}{ll}
+2 & 0 \\
+0 & 2
+\end{array}\right]
+$$
+
+$$
+\begin{aligned}
+& A \rightarrow\left|\begin{array}{cc}2-\lambda & 1 \\0 & 2-\lambda\end{array}\right|=(2-\lambda)(2-\lambda)-1=\lambda^{2}-4 \lambda+4-1=\lambda^{2}-4 \lambda+3 = 0
+\end{aligned}
+$$
+
+A megoldóképlettel kiszámolva:
+$\lambda_1 = 3 \qquad \lambda_2 = 1$
+
+\vspace{2mm}
+$\lambda_{1}=3$
+
+$$
+\left[\begin{array}{rr|r}
+-1 & 1 & 0 \\
+0 & -1 & 0
+\end{array}\right] \begin{array}{rr}
+-x+y=0 & -y=0 \\
+y=-x & y=0
+\end{array} \quad s_{1}=\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]=\left[\begin{array}{c}
+-y \\
+0
+\end{array}\right]=p \cdot\left[\begin{array}{c}
+-1 \\
+0
+\end{array}\right]
+$$
+
+Ha A és B hasonlók ugyanahhoz a diagonális mátrixhoz, akkor egymáshoz viszonyítva is hasonlók. A nem diagonalizálható és B diagonalizálható, tehát nem hasonló a két mátrix.
+
+\subsection{}
+$A: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2} \quad$ y tengelyre tükröz
+
+\noindent $B: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2} \quad $ x tengelyre tükröz
+
+\vspace{2mm}
+\noindent $A+B$ milyen geometriai leképezés?
+
+$$
+\begin{aligned}
+& A\left(\left[\begin{array}{l}x \\y\end{array}\right]\right)=\left[\begin{array}{l}-x \\y\end{array}\right] \\
+& A(i)=-i=\left[\begin{array}{c}-1 \\0\end{array}\right] \quad A(\underline{j})=j=\left[\begin{array}{l}0 \\1\end{array}\right] \\
+& \underline{\underline{A}}{=}[A(\underline{i}) \mid A(j)]=\left[\begin{array}{cc}-1 & 0 \\0 & 1\end{array}\right] \\
+\\
+& B\left(\left[\begin{array}{l}x \\y\end{array}\right]\right)=\left[\begin{array}{c}x \\-y\end{array}\right]
+\end{aligned}
+$$
+
+$$
+\left.\begin{array}{c}
+     B(\underline{i}) = \underline{i} = \left[\begin{array}{c}
+    1  \\
+    0
+\end{array}\right] \\
+\\
+     B(\underline{j}) = -\underline{j} = \left[\begin{array}{c}
+    0  \\
+    -1
+\end{array}\right] 
+\end{array}\right\} \underline{\underline{B}} = \left[\begin{array}{cc}
+    1 & 0 \\
+    0 & -1
+\end{array}\right]
+$$
+
+$$
+\underline{\underline{B \cdot A}}=\left[\begin{array}{cc}
+1 & 0 \\
+0 & -1
+\end{array}\right]
+\left[\begin{array}{cc}
+-1 & 0 \\
+0 & 1
+\end{array}\right]=\left[\begin{array}{cc}
+-1 & 0 \\
+0 & -1
+\end{array}\right] \\
+$$
+
+Geometriai leképezésként:
+\begin{itemize}
+    \item origóra tükrözés
+    \item $180^{\circ}$ - os forgatás
+    \item -1-gyel való szorzás
+\end{itemize}
+
+\subsection{}
+Izomorfizmus - e a leképezés?
+
+\vspace{2mm}
+$A: \mathbb{R}^{2 \times 2} \rightarrow \mathbb{R}^{4}$
+
+
+$A\left(\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]\right)=\left[\begin{array}{l}a \\ b \\ c \\ d\end{array}\right]$
+
+\vspace{2mm}
+$\operatorname{Ker}(A)=\left\{\left[\begin{array}{ll}0 & 0 \\ 0 & 0\end{array}\right]\right\}$
+
+\vspace{2mm}
+$Im(A)=\mathbb{R}^{4} \quad \Rightarrow$ Izomorfizmus $\checkmark$
+
+\subsection{}
+(2) $B: F(\mathbb{R}, \mathbb{R}) \rightarrow \mathbb{R}^{3} \qquad$ ($F(\mathbb{R}, \mathbb{R})$ másképpen $f: \mathbb{R} \longrightarrow \mathbb{R}$)
+
+$$
+\begin{aligned}
+&\end{aligned} \quad B(f)=\left[\begin{array}{l}
+f(1) \\
+f(2) \\
+f(3)
+\end{array}\right] \\
+$$
+
+$$
+\begin{aligned}
+& f(1)=f(2)=f(3)=0 \\
+& B(f)=\underline{0}
+\end{aligned}
+$$
+
+Több ilyen lehet $\Rightarrow$ nem injektív $\Rightarrow$ nem izomorfizmus $\times$
+
+\subsection{}
+Cayley - Hamilton tétel alkalmazása
+
+$$
+\begin{aligned}
+&A=\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4
+\end{array}\right]\left|\begin{array}{cc}
+1-\lambda & -1 \\
+2 & 4-\lambda
+\end{array}\right|=(1-\lambda)(4-\lambda)+2=\lambda^{2}-5 \lambda+6=P(\lambda) \\
+&p(\underline{\underline{A}})= \underline{\underline{A}}^{2}-5 \cdot \underline{\underline{A}}+6 \cdot \underline{\underline{E}}=\left[\begin{array}{cc}
+-1 & -5 \\
+10 & 14
+\end{array}\right]-\left[\begin{array}{cc}
+5 & -5 \\
+10 & 20
+\end{array}\right]+\left[\begin{array}{ll}
+6 & 0 \\
+0 & 6
+\end{array}\right]=\left[\begin{array}{ll}
+0 & 0 \\
+0 & 0
+\end{array}\right] \\
+& \\
+&\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4
+\end{array}\right]\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4 
+\end{array}\right]= \left[ \begin{array}{cc}
+    -1 & -5 \\
+    10 & 14
+\end{array}\right] =
+\underline{\underline{A}}^{2}
+\end{aligned}
+$$
+
+\vspace{2mm}
+2. megoldás:
+$$
+\begin{aligned}
+&P(\underline{\underline{A}})=(\underline{A}-2 E)(\underline{\underline{A}}-3 \underline{E})=
+\left(\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4
+\end{array}\right]
+-\left[\begin{array}{ll}2 & 0 \\0 & 2\end{array}\right]\right) \cdot\left(\left[\begin{array}{cc}1 & -1 \\2 & 4\end{array}\right]-\left[\begin{array}{ll}3 & 0 \\0 & 3\end{array}\right]\right) \\
+\\
+& \Rightarrow \quad\left[\begin{array}{cc}-1 & -1 \\2 & 2\end{array}\right]\left[\begin{array}{cc}-2 & -1 \\2 & 1\end{array}\right] = \left[\begin{array}{ll}0 & 0 \\0 & 0\end{array}\right]
+\end{aligned}
+$$
+
+Inverz mátrix számítása:
+
+$$
+\begin{aligned}
+& P(\underline{A})=\underline{\underline{A}}^{2}-5 \cdot \underline{\underline{A}}+6 \cdot \underline{\underline{E}}=\underline{\underline{\underline{0}}} \\
+& \underline{\underline{A}}^2 - 5 \cdot \underline{\underline{A}} = -6 \cdot \underline{\underline{E}} \\
+& \underline{\underline{A}}(\underline{\underline{A}} - 5 \underline{\underline{E}}) \cdot -\frac{1}{6} = \underline{\underline{E}}
+\end{aligned}
+$$
+
+Mivel az inverz mátrix egyértelmű, ez a mátrix lehet csak az.
+
+$$
+\begin{aligned}
+&-\frac{1}{6}\left[\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4
+\end{array}\right]-\left[\begin{array}{ll}
+5 & 0 \\
+0 & 5
+\end{array}\right]\right]=-\frac{1}{6}\left[\begin{array}{cc}
+-4 & -1 \\
+2 & -1
+\end{array}\right]=\left[\begin{array}{cc}
+\frac{2}{3} & \frac{1}{6} \\
+-\frac{1}{3} & \frac{1}{6}
+\end{array}\right] = \underline{\underline{A}}^{-1}\\
+\\
+&{\left[\begin{array}{cc}
+1 & -1 \\
+2 & 4
+\end{array}\right]^{-1}=\frac{1}{6} \cdot\left[\begin{array}{cc}
+4 & 1 \\
+-2 & 1
+\end{array}\right]}
+\end{aligned}
+$$
+

@@ -1,0 +1,144 @@
+\begin{comment}
+\begin{center}
+2022. február 17.
+
+Gyakorlatvezető: Dr. Ács Bernadett
+
+Témakör: Bázistranszformáció
+\end{center}
+\end{comment}
+
+
+\subsection{}
+$$
+\begin{aligned}
+&\underline{i}, \underline{j} \rightarrow b_{1}=\left[\begin{array}{c}3 \\-2\end{array}\right]  \qquad b_{2}=\left[\begin{array}{l}1 \\4\end{array}\right] \\
+\\
+& S=\left[\begin{array}{cc}3 & 1 \\-2 & 4\end{array}\right]\left[\begin{array}{c} \alpha \\ \beta \end{array}\right] = \left[\begin{array}{c}3 \alpha+\beta \\-2 \alpha+4 \beta\end{array}\right]=\alpha\left[\begin{array}{c}3 \\-2\end{array}\right]+\beta\left[\begin{array}{l}1 \\4\end{array}\right] \\
+\\
+& S \cdot[v]_{b}=[v]_{i j} \quad / \cdot S^{-1} \text {  létezik, mert } b_{1}, b_{2}{ } \text { lin.függetlenek }\rightarrow\operatorname{det}(s) \neq 0\\
+\\
+& [v]_{b}=s^{-1}[v]_{i j} \quad  \quad   \\
+\\
+& S^{-1}=\underbrace{\frac{1}{3-4-(-2)}}_{\operatorname{det}(s)} \cdot \underbrace{\left[\begin{array}{cc}4 & -1 \\2 & 3\end{array}\right]}_{\operatorname{adj}(s)}
+\end{aligned}
+$$
+
+\subsection{}
+
+a)
+$$
+\begin{aligned}
+&[v]_{i j}=\left[\begin{array}{c}-1 \\ 5\end{array}\right]_{i j}\rightarrow \left[v_{b}\right]=? \\
+\\
+&\frac{1}{14}\left[\begin{array}{cc}
+    4 & -1 \\
+    2 &  3
+\end{array}\right] 
+\left[\begin{array}{c}
+    -1 \\
+    5
+\end{array}\right] =
+\left[\begin{array}{c}
+    -4 + (-5) \\
+    -2 +  15
+\end{array}\right] \cdot \frac{1}{14} = \left[\begin{array}{c}
+    -9 \\
+    13
+\end{array}\right]\cdot \frac{1}{14} = [\underline{v}]_b
+\end{aligned}
+$$
+
+
+\noindent b)
+$$
+\begin{aligned}
+&[w]_{b}=\left[\begin{array}{c}4 \\ -1\end{array}\right]_{b}\rightarrow \left[w\right]_{ij}=? \\
+\\
+& \left[\begin{array}{cc}3 & 1 \\-2 & 4\end{array}\right]\left[\begin{array}{c}4 \\-1\end{array}\right]\left[\begin{array}{c}12-1 \\-8-4\end{array}\right]=\left[\begin{array}{c}11 \\-12\end{array}\right]=[\underline{w}]_{ij}
+\end{aligned}
+$$
+\subsection{}
+
+Régi bázis
+
+$$
+\underline{a}_{1}=\left[\begin{array}{c}
+3 \\
+-2 \\
+-3
+\end{array}\right] \quad \underline{a}_{2}=\left[\begin{array}{l}
+2 \\
+4 \\
+3
+\end{array}\right] \quad \underline{a}_{3}=\left[\begin{array}{l}
+4 \\
+1 \\
+5
+\end{array}\right]
+$$
+
+\noindent Új bázis
+
+$$
+\underline{b}_{1}=\left[\begin{array}{l}
+2 \\
+4 \\
+3
+\end{array}\right] \quad \underline{b}_{2}=\left[\begin{array}{l}
+4 \\
+1 \\
+5
+\end{array}\right] \quad \underline{b}_{3}=\left[\begin{array}{c}
+3 \\
+-2 \\
+-3
+\end{array}\right]
+$$
+
+$$
+\begin{aligned}
+& \underline{b}_{1}=\underline{a}_{2}=0 \cdot \underline{a}_{1}+1 \cdot \underline{a}_{2}+0 \cdot \underline{a}_{3} \rightarrow \underline{b}_{1}=\left[\begin{array}{l}0 \\1 \\0\end{array}\right]_a \\
+& \underline{b}_{2}=\underline{a}_{3}=\left[\begin{array}{l}0 \\0 \\1\end{array}\right]_{a} \quad \underline{b}_{3}=\underline{a}_{1}=\left[\begin{array}{l}1 \\0 \\0\end{array}\right]_a
+\end{aligned}
+$$
+
+Az áttérési mátrix:
+$$
+S=
+\left[\begin{array}{ccc}
+    0 & 0 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+\end{array}\right] \quad \Longrightarrow  S^{-1}=\left[\begin{array}{lll}0 & -1 & 0 \\0 & 0 & 1 \\1 & 0 & 0\end{array}\right]
+$$
+
+\subsection{}
+
+a) Mi a leképezés mátrixa a sajátvektorokból?
+
+\vspace{2mm}
+$\mathcal{B}: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2} \quad$ 
+
+$$
+\begin{aligned}
+& B=\left[\begin{array}{cc}-1 & 0 \\4 & 1\end{array}\right] \quad[B]_{S_{1} S}=\left[\begin{array}{c|c}\lambda_{1} & 0 \\0 & \lambda_{2}\end{array}\right] \\
+\\
+& \begin{array}{cc}{\left[\begin{array}{cc}-1-\lambda & 0 \\4 & 1-\lambda\end{array}\right]=(-1-\lambda)(1-\lambda)=0}\\
+& \end{array} \\
+& \lambda_{1}=-1 \quad \lambda_{2}=1
+\end{aligned}
+$$
+
+Mivel páronként különbözők a sajátértékek
+
+$\rightarrow \exists$ sajátvektorokból álló bázis
+
+$\rightarrow$ ebben felírva a B leképezés mátrixa:
+
+$$
+\left[\begin{array}{cc}
+-1 & 0 \\
+0 & 1
+\end{array}\right]=D
+$$

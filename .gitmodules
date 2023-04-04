@@ -1,0 +1,3 @@
+[submodule "kotaf-framework"]
+	path = kotaf-framework
+	url = ssh://dev.itk.ppke.hu/kotaf/kotaf-framework
